@@ -1,5 +1,5 @@
 repeat task.wait() until game:IsLoaded()
-local DqrUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/roLfesnz/bloxfruits/refs/heads/main/ui'))()
+local DqrUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/roLfesnz/bloxfruits/refs/heads/main/ui.lua'))()
 
 local args = {
     [1] = "SetTeam",
