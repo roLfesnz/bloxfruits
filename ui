@@ -1,6 +1,6 @@
 
 self = {}
-self.dqr = Instance.new("ScreenGui")
+self.Dqr = Instance.new("ScreenGui")
 self.Main = Instance.new("Frame")
 self.UIGradient = Instance.new("UIGradient")
 self.UICorner = Instance.new("UICorner")
@@ -73,14 +73,14 @@ self.UIPadding_11 = Instance.new("UIPadding")
 self.Events = Instance.new("Folder")
 self.Notification = Instance.new("BindableEvent")
 
-self.dqr.Name = "dqr"
-self.dqr.Parent = game:GetService('CoreGui')
-self.dqr.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-self.dqr.ResetOnSpawn = false
-self.dqr.IgnoreGuiInset = true
+self.Dqr.Name = "Dqr"
+self.Dqr.Parent = game:GetService('CoreGui')
+self.Dqr.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+self.Dqr.ResetOnSpawn = false
+self.Dqr.IgnoreGuiInset = true
 
 self.Main.Name = "Main"
-self.Main.Parent = self.dqr
+self.Main.Parent = self.Dqr
 self.Main.AnchorPoint = Vector2.new(0.5, 0.5)
 self.Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 self.Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -107,7 +107,7 @@ self.Title.BorderSizePixel = 0
 self.Title.Position = UDim2.new(0.0272232313, 0, 0.068681322, 0)
 self.Title.Size = UDim2.new(0, 200, 0, 20)
 self.Title.FontFace = Font.new("rbxasset://fonts/families/Inter", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
-self.Title.Text = "dqr | BloxFruits"
+self.Title.Text = "Dqr | BloxFruits"
 self.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 self.Title.TextSize = 16.000
 self.Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -123,7 +123,7 @@ self.Subtitle.BorderSizePixel = 0
 self.Subtitle.Position = UDim2.new(0.0272232313, 0, 0.144230768, 0)
 self.Subtitle.Size = UDim2.new(0, 276, 0, 35)
 self.Subtitle.FontFace = Font.new("rbxasset://fonts/families/Inter", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-self.Subtitle.Text = "this version of dqr is only for BloxFruits and it will automatically find fruits for you"
+self.Subtitle.Text = "this version of Dqr is only for BloxFruits and it will automatically find fruits for you"
 self.Subtitle.TextColor3 = Color3.fromRGB(202, 202, 202)
 self.Subtitle.TextSize = 14.000
 self.Subtitle.TextWrapped = true
@@ -607,10 +607,10 @@ self.UIStroke_6.Thickness = 1.500
 self.UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 self.ScriptManager.Name = "ScriptManager"
-self.ScriptManager.Parent = self.dqr
+self.ScriptManager.Parent = self.Dqr
 
 self.Notifications.Name = "Notifications"
-self.Notifications.Parent = self.dqr
+self.Notifications.Parent = self.Dqr
 self.Notifications.AnchorPoint = Vector2.new(1, 1)
 self.Notifications.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 self.Notifications.BackgroundTransparency = 1.000
@@ -708,7 +708,7 @@ self.UIPadding_11.PaddingRight = UDim.new(0, 10)
 self.UIPadding_11.PaddingTop = UDim.new(0, 10)
 
 self.Events.Name = "Events"
-self.Events.Parent = self.dqr
+self.Events.Parent = self.Dqr
 
 self.Notification.Name = "Notification"
 self.Notification.Parent = self.Events
@@ -1151,7 +1151,7 @@ local function OBNOEVM_fake_script() -- ScriptManager.SettingsManager
 
 	local notify = script.Parent.Parent.Events.Notification
 	local player = game.Players.LocalPlayer
-	local dqr = script.Parent.Parent
+	local Dqr = script.Parent.Parent
 	
 	local buttons = {
 		hideHats = script.Parent.Parent.Main.Holder.settings.RemoveHatsButton.Interact,
@@ -1203,10 +1203,10 @@ local function OBNOEVM_fake_script() -- ScriptManager.SettingsManager
 	end)
 	
 	buttons.abortScript.MouseButton1Click:Connect(function()
-		notify:Fire("dqr is aborting the script.", "error")
+		notify:Fire("Dqr is aborting the script.", "error")
 		task.wait(2)
-		player:Kick("dqr has been force stopped by "..player.Name..".")
-		dqr:Destroy()
+		player:Kick("Dqr has been force stopped by "..player.Name..".")
+		Dqr:Destroy()
 	end)
 end
 coroutine.wrap(OBNOEVM_fake_script)()
