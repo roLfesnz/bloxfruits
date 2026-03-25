@@ -1,6 +1,32 @@
+repeat task.wait() until game:IsLoaded()
+
 local WEBHOOK_URL = "https://discord.com/api/webhooks/1486342241260798022/L5hsFgWw9ujgm9Hp9TSeB0H0KKmEvldXhbGiwljVKS6yfwUg-f3LNnPI4qJ_95jV6Cb-"
 
-repeat task.wait() until game:IsLoaded()
+local function sendDiscordNotification(fruitName)
+    if WEBHOOK_URL == "https://discord.com/api/webhooks/1486342241260798022/L5hsFgWw9ujgm9Hp9TSeB0H0KKmEvldXhbGiwljVKS6yfwUg-f3LNnPI4qJ_95jV6Cb-" then return end
+    
+    local url = WEBHOOK_URL:gsub("discord.com", "hooks.hyra.io")
+    local data = {
+        ["embeds"] = {{
+            ["title"] = "🍎 Fruit Sniper Success!",
+            ["description"] = "Berhasil dapet: **" .. fruitName .. "**\nStatus: *Stored to Inventory*",
+            ["color"] = 65280, -- Warna Hijau
+            ["footer"] = { ["text"] = "Redfinger AFK Monitor" },
+            ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%SZ")
+        }}
+    }
+    
+    local request = http_request or request or syn.request
+    if request then
+        request({
+            Url = url,
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"},
+            Body = game:GetService("HttpService"):JSONEncode(data)
+        })
+    end
+end
+
 local DqrUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/roLfesnz/bloxfruits/refs/heads/main/ui.lua'))()
 
 local args = {
