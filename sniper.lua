@@ -46,7 +46,7 @@ local RareFruits = {
 
 local function ServerHop()
 	local hop = loadstring(game:HttpGet(
-		"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua"
+		"https://raw.githubusercontent.com/roLfesnz/bloxfruits/refs/heads/main/serverhop.lua"
 	))()
 
 	hop:Teleport(game.PlaceId)
